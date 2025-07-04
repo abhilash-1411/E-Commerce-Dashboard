@@ -1,11 +1,13 @@
 import './App.css';
-import Nav from './Nav';
+import Footer from './components/Footer';
+import Nav from './components/Nav';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+ 
       <div className='App'>
+           <BrowserRouter>
         <Nav/>
         <Routes>
           <Route path="/" element={<h1>Product listing component</h1>} />
@@ -18,8 +20,12 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/profile" element={<Profile />} /> */}
         </Routes>
+           </BrowserRouter>
+               <Footer/>
       </div>
-    </BrowserRouter>
+      
+ 
+
   );
 }
 
