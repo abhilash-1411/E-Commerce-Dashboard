@@ -40,3 +40,28 @@
   width: 100%;
   background-color: skyblue;
 }
+.inputBox {
+  display: block;
+  margin: 25px;
+  width: 300px;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid skyblue;
+}
+.signup{
+  margin-left: 30%;
+}
+.signupButton{
+  width: 150px;
+  margin:25px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+  cursor: pointer;
+  margin-right: 60%;
+}
+.signup h1{
+  margin-right: 60%;
+}
