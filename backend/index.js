@@ -1,10 +1,13 @@
 const express=require('express');
 const mongoose=require('mongoose');
+const cors=require('cors');
 const app=express();
 require('./db/config');
 const User=require('./db/User');
-app.use(express.json());
 
+
+app.use(express.json());
+app.use(cors());
 
 app.post('/register',(req,resp)=>{
     const {name,email,password}=req.body;
