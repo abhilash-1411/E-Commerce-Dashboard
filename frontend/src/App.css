@@ -42,25 +42,25 @@
 }
 .inputBox {
   display: block;
-  margin: 25px;
+  margin: 20px;
   width: 300px;
   padding: 7px;
   border-radius: 5px;
   border: 1px solid skyblue;
 }
-.signup{
+.signup {
   margin-left: 30%;
 }
-.product{
+.product {
   margin-left: 30%;
 }
 
-.login{
+.login {
   margin-left: 30%;
 }
-.appButton{
+.appButton {
   width: 150px;
-  margin:25px;
+  margin: 20px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -70,17 +70,25 @@
   margin-right: 60%;
 }
 
- .signup h1,.login h1,.product h1{
+.signup h1,
+.login h1,
+.product h1 {
   margin-right: 60%;
 }
 
-.nav-right{
+.nav-right {
   text-align: right;
 }
 .logo {
   width: 45px;
-  float:left;
+  float: left;
   border-radius: 50px;
   margin-top: 3px;
-  margin-left:20px;
+  margin-left: 20px;
+}
+.invalid-input {
+  color: red;
+  margin-top: -20px;
+  display: block;
+  margin-right: 710px;
 }
