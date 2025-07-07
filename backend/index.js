@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 require("./db/config");
 const User = require("./db/User");
+const Product = require("./db/Product");
 
 app.use(express.json());
 app.use(cors({ origin: "*" }));
@@ -29,6 +30,12 @@ app.post("/login", async (req, resp) => {
   } else {
     resp.status(401).send({ message: "No user found with these credentials" });
   }
+});
+
+app.post("/add-product", async (req, resp) => {
+  const product = new Product(req.body);
+  let result = await product.save();
+  resp.send(result);
 });
 
 app.listen(8080);
