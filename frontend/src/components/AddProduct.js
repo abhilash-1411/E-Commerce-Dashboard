@@ -9,6 +9,17 @@ const AddProduct = () => {
 
     const addProduct = async () => {
         console.log(name, price, category, company);
+        const userId = JSON.parse(localStorage.getItem("user"))._id;
+        let result = await fetch("http://localhost:8080/add-product", {
+            method: "POST",
+            body: JSON.stringify({ name, price, category, company, userId }),
+            headers: {
+                "Content-Type": "application/json",
+            }
+            
+        });
+        result = await result.json();
+        console.log("Result:", result);
     }
     return (
         <div className="product">
