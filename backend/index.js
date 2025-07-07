@@ -51,4 +51,14 @@ app.delete("/product/:id", async (req, resp) => {
   const result = await Product.deleteOne({ _id: req.params.id });
   resp.send(result);
 });
+
+app.get("/product/:id", async (req, resp) => {
+  const result = await Product.findOne({ _id: req.params.id });
+  if (result) {
+    resp.send(result);
+  } else {
+    resp.status(404).send({ message: "Product not found" });
+  }
+});
+
 app.listen(8080);
