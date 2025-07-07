@@ -51,7 +51,10 @@
 .signup{
   margin-left: 30%;
 }
-.signupButton{
+.login{
+  margin-left: 30%;
+}
+.appButton{
   width: 150px;
   margin:25px;
   padding: 10px;
@@ -63,5 +66,8 @@
   margin-right: 60%;
 }
 .signup h1{
+  margin-right: 60%;
+}
+.login h1{
   margin-right: 60%;
 }

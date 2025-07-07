@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import SignUp from './components/SignUp';
 import PrivateComponent from './components/PrivateComponent';
+import Login from './components/Login';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/update" element={<h1> Update Product component</h1>} />
           <Route path="/profile" element={<h1> Profile component</h1>} />
           <Route path="/logout" element={<h1> Logout component</h1>} />
+          <Route path="/login" element={<Login />} />
 
           </Route>
           <Route path="/signup" element={<SignUp />} />
