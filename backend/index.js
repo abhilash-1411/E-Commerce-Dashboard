@@ -1,22 +1,34 @@
-const express=require('express');
-const mongoose=require('mongoose');
-const cors=require('cors');
-const app=express();
-require('./db/config');
-const User=require('./db/User');
-
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const app = express();
+require("./db/config");
+const User = require("./db/User");
 
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: "*" }));
 
-app.post('/register',(req,resp)=>{
-    const {name,email,password}=req.body;
-    const user=new User({name,email,password});
-    user.save().then(()=>{
-        resp.send({message:"User registered successfully",user});
-    }).catch((error)=>{
-        resp.status(500).send({message:"Error registering user",error});
-    });
-})
+app.post("/register", async (req, resp) => {
+  const user = new User(req.body);
+  let result = await user.save();
+  result = result.toObject();
+  delete result.password;
+  resp.send(result);
+});
 
-app.listen(8080)
+app.post("/login", async (req, resp) => {
+  let user = await User.findOne(req.body).select("-password");
+  if (req.body.email && req.body.password) {
+    if (user) {
+      resp.send(user);
+    } else {
+      resp
+        .status(401)
+        .send({ message: "No user found with these credentials" });
+    }
+  } else {
+    resp.status(401).send({ message: "No user found with these credentials" });
+  }
+});
+
+app.listen(8080);
