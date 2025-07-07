@@ -19,10 +19,11 @@ function App() {
           <Route path="/add" element={<h1> Add Product component</h1>} />
           <Route path="/update" element={<h1> Update Product component</h1>} />
           <Route path="/profile" element={<h1> Profile component</h1>} />
-          <Route path="/logout" element={<h1> Logout component</h1>} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Login/>} />
+          
 
           </Route>
+          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           {/* <Route path="/add" element={<AddProduct />} />
           <Route path="/update" element={<UpdateProduct />} />

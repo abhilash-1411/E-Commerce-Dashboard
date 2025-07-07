@@ -71,3 +71,13 @@
 .login h1{
   margin-right: 60%;
 }
+.nav-right{
+  text-align: right;
+}
+.logo {
+  width: 45px;
+  float:left;
+  border-radius: 50px;
+  margin-top: 3px;
+  margin-left:20px;
+}
